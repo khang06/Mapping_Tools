@@ -85,7 +85,7 @@ namespace Mapping_Tools {
         }
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e) {
-            _ = Update();
+            //_ = Update();
         }
 
         private void Setup() {

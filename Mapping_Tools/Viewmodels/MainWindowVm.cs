@@ -286,7 +286,7 @@ namespace Mapping_Tools.Viewmodels {
 
             var type = view.GetType();
 
-            Header = type.GetCustomAttribute<DontShowTitleAttribute>() == null ? $"Mapping Tools - {ViewCollection.GetName(type)}" : "Mapping Tools";
+            Header = type.GetCustomAttribute<DontShowTitleAttribute>() == null ? $"Mapping Tools (MTIPC) - {ViewCollection.GetName(type)}" : "Mapping Tools (MTIPC)";
 
             VerticalContentScrollBarVisibility = type.GetCustomAttribute<VerticalContentScrollAttribute>() != null ?
                 ScrollBarVisibility.Auto : ScrollBarVisibility.Disabled;
