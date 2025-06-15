@@ -11,7 +11,7 @@
     xmlns:standard="clr-namespace:Mapping_Tools.Views.Standard"
     d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowVm}"
     mc:Ignorable="d"
-    Title="Mapping Tools"
+    Title="Mapping Tools (MTIPC)"
     ResizeMode="CanResize"
     Width="1500"
     Height="800"
