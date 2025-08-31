@@ -36,6 +36,10 @@ namespace Mapping_Tools.Classes.BeatmapHelper.Events {
                 case "Break":
                     myEvent = new Break();
                     break;
+                case "3":
+                case "Colour":
+                    myEvent = new Colour();
+                    break;
                 case "Sprite":
                     myEvent = new Sprite();
                     break;
