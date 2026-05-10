@@ -162,6 +162,8 @@ namespace Mapping_Tools.Classes.SystemTools {
 
         public static string GetCurrentBeatmap() {
             string path;
+            // PATCH: Never use OsuMemoryDataProvider
+            /*
             try {
                 string songs = SettingsManager.GetSongsPath();
 
@@ -186,20 +188,20 @@ namespace Mapping_Tools.Classes.SystemTools {
             catch (Exception ex) {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
-                try {
-                    lock (EditorReaderStuff.EditorReaderLock) {
-                        var reader = EditorReaderStuff.GetEditorReader();
-                        reader.SetProcess(EditorReaderStuff.GetOsuProcess());
-                        reader.FetchHOM();
-                        reader.FetchBeatmap();
-                        path = EditorReaderStuff.GetCurrentBeatmap(reader);
-                    }
+            */
+            try {
+                lock (EditorReaderStuff.EditorReaderLock) {
+                    var reader = EditorReaderStuff.GetEditorReader();
+                    reader.SetProcess(EditorReaderStuff.GetOsuProcess());
+                    reader.FetchHOM();
+                    reader.FetchBeatmap();
+                    path = EditorReaderStuff.GetCurrentBeatmap(reader);
                 }
-                catch (Exception ex2) {
-                    Console.WriteLine(ex2.Message);
-                    Console.WriteLine(ex2.StackTrace);
-                    throw ex;
-                }
+            }
+            catch (Exception ex2) {
+                Console.WriteLine(ex2.Message);
+                Console.WriteLine(ex2.StackTrace);
+                throw;
             }
             
             return path;
