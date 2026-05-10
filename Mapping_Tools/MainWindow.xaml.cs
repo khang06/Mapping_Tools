@@ -85,7 +85,7 @@ namespace Mapping_Tools {
         }
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e) {
-            //_ = Update();
+            _ = Update();
         }
 
         private void Setup() {
@@ -104,10 +104,11 @@ namespace Mapping_Tools {
         private async Task Update(bool allowSkip = true, bool notifyUser = false) {
             try {
                 var assetNamePattern = Environment.Is64BitProcess ? "release_x64.zip" : "release.zip";
-                updateManager = new UpdateManager("OliBomby", "Mapping_Tools", assetNamePattern);
+                // PATCH: Use the MTIPC repo for updates instead
+                updateManager = new UpdateManager("khang06", "Mapping_Tools", assetNamePattern);
                 var hasUpdate = await updateManager.FetchUpdateAsync();
 
-                if (!hasUpdate) {
+                if (!hasUpdate) {   
                     if (notifyUser)
                         MessageQueue.Enqueue("No new versions available.");
                     return;

@@ -31,7 +31,8 @@ namespace Mapping_Tools.Views.Standard {
         private async void SetChangelogList() {
             try {
                 string responseString;
-                using (HttpResponseMessage response = await MainWindow.HttpClient.GetAsync("https://api.github.com/repos/OliBomby/Mapping_Tools/releases")) {
+                // PATCH: Use the MTIPC repo for updates instead
+                using (HttpResponseMessage response = await MainWindow.HttpClient.GetAsync("https://api.github.com/repos/khang06/Mapping_Tools/releases")) {
                     responseString = await response.Content.ReadAsStringAsync();
                 }
                 dynamic json = JsonConvert.DeserializeObject(responseString);
